@@ -101,8 +101,8 @@ const EditUser = () => {
           <input
             type="text"
             className="form-control"
-            id="phone"
-            name="phone"
+            id="password"
+            name="password"
             value={user.phone}
             onChange={handelInput}
           />
