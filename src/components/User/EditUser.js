@@ -9,10 +9,11 @@ const EditUser = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { id } = useParams();
   const navigate = useNavigate();
-  const getUserApi = "http://localhost:3001/usuarios";
+  const getUserApi = process.env.API_URL;
 
   useEffect(() => {
     getUser();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getUser = () => {
@@ -70,14 +71,14 @@ const EditUser = () => {
       <form onSubmit={handelSubmit}>
         <div className="mb-3">
           <label for="name" className="form-label">
-            Name
+            Nombre
           </label>
           <input
             type="text"
             className="form-control"
-            id="name"
-            name="name"
-            value={user.name}
+            id="nombre"
+            name="nombre"
+            value={user.nombre}
             onChange={handelInput}
           />
         </div>
@@ -96,14 +97,14 @@ const EditUser = () => {
         </div>
         <div className="mb-3">
           <label for="pwd" className="form-label">
-            Phone
+            Password
           </label>
           <input
             type="text"
             className="form-control"
             id="password"
             name="password"
-            value={user.phone}
+            value={user.password}
             onChange={handelInput}
           />
         </div>

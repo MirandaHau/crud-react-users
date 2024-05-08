@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Loader from "../Common/Loader";
 
 const ShowUser = () => {
-  const showUserApi = "http://localhost:3001/usuarios";
+  const showUserApi = process.env.API_URL;
 
   const [user, setUser] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -30,6 +30,7 @@ const ShowUser = () => {
 
   useEffect(() => {
     getUsers();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getUsers = () => {
